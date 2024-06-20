@@ -21,7 +21,7 @@ def retrieve_news(symbol):
     print("Retrieving news headlines...")
 
     for page_num in tqdm(range(1, 10)):
-        news_url = f'https://markets.businessinsider.com/news/{symbol}-stock?p={page_num}'
+        news_url = f'https://twitter.com/news/{symbol}-stock?p={page_num}'
         response = requests.get(news_url)
         webpage_content = response.text
         soup = BeautifulSoup(webpage_content, 'lxml')
